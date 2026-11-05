@@ -152,6 +152,23 @@ body{background:var(--paper);color:var(--ink)}.brand-logo{filter:drop-shadow(0 4
 .contact-box #contact-form .form-privacy{font-size:12px;line-height:1.5;margin:0 0 20px;color:var(--texte-secondaire)}#contact-submit{border:0;cursor:pointer;font-family:inherit}#contact-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}.contact-box #contact-status{font-size:13px;line-height:1.5;margin:16px 0 0;min-height:20px}#contact-status[data-state="error"]{color:var(--rose-accent)}
 @media(max-width:850px){.contact-layout{grid-template-columns:1fr;gap:32px}}@media(max-width:480px){.contact-fields{grid-template-columns:1fr;gap:0}}
 </style>
+<style id="hero-data-refinement">
+.hero h1{font-size:clamp(38px,4.8vw,62px);line-height:1.07;letter-spacing:-.05em}
+.hero h1 .hero-impact{color:#83a9d3;background:linear-gradient(110deg,#12375D 5%,#31577D 33%,#8eb7df 48%,#31577D 64%,#12375D 95%);background-size:200% 100%;background-position:70% 50%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-text-stroke:.65px #a8c6e5;filter:drop-shadow(0 0 9px rgba(155,197,240,.2));transition:background-position 1.2s ease,filter .45s ease}
+.hero h1:hover .hero-impact{background-position:0% 50%;filter:drop-shadow(0 0 13px rgba(155,197,240,.4))}
+.hero-visual{opacity:1}
+.hero-visual .core{fill:var(--fond-secondaire);stroke:#fff;stroke-opacity:.95;stroke-width:1.4;filter:drop-shadow(0 0 3px rgba(255,255,255,.7)) drop-shadow(0 0 10px rgba(255,255,255,.18))}
+.hero-visual .core-label-data{fill:#fff;font:800 23px Arial,sans-serif;letter-spacing:2px}
+.hero-visual .core-glow{fill:#fff;opacity:.06;animation:none}
+.hero-note{display:flex;align-items:center;gap:9px;color:#fff;letter-spacing:.08em;bottom:9%;right:5%}
+.hero-note .hero-verb{position:relative;display:inline-block;color:#fff;font-weight:750;padding:9px 0;transition:transform .3s cubic-bezier(.2,.8,.2,1),text-shadow .3s}
+.hero-note .hero-verb::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:#fff;transform:scaleX(0);transform-origin:left;opacity:0;box-shadow:0 0 7px #ffffff90;transition:transform .3s ease,opacity .3s}
+.hero-note-separator{color:#fff;opacity:.65}
+@media(hover:hover) and (pointer:fine){.hero-note .hero-verb:hover{transform:translateY(-4px);text-shadow:0 0 8px #ffffff90,0 0 18px #ffffff40}.hero-note .hero-verb:hover::after{transform:scaleX(1);opacity:1}}
+@media(max-width:580px){.hero h1{font-size:clamp(34px,9vw,48px)}.hero-note{bottom:4%;right:7%;gap:7px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.hero h1 .hero-impact,.hero-note .hero-verb,.hero-note .hero-verb::after{transition:none}.hero-note .hero-verb:hover{transform:none}}
+@media(forced-colors:active){.hero h1 .hero-impact{background:none;-webkit-text-fill-color:CanvasText;-webkit-text-stroke:0;filter:none}}
+</style>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -163,12 +180,12 @@ body{background:var(--paper);color:var(--ink)}.brand-logo{filter:drop-shadow(0 4
     <section class="wrap hero" id="accueil" aria-labelledby="hero-title">
       <div class="hero-content">
         <div class="eyebrow">Portfolio · Data & BI</div>
-        <h1 id="hero-title">Des données<br>plus <span>lisibles</span></h1>
+        <h1 id="hero-title">Révéler le<br><span class="hero-impact">potentiel</span><br>de vos données</h1>
         <p>Data Analyst orientée Data/BI. J’analyse, structure et transforme les données en indicateurs et outils utiles à la décision.</p>
         <div class="hero-actions"><a class="button button-primary" href="#projets">Découvrir mes projets <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="https://github.com/sara-elimrani" target="_blank" rel="noreferrer">Voir mon GitHub <span aria-hidden="true">↗</span></a></div>
       </div>
-      <div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 360 360" role="presentation"><circle class="orbit" cx="180" cy="180" r="133"/><circle class="orbit-alt" cx="180" cy="180" r="104"/><circle class="orbit" cx="180" cy="180" r="73"/><g class="link"><path d="M180 180 180 48M180 180 290 110M180 180 312 238M180 180 180 315M180 180 62 250M180 180 70 95"/><path d="M180 48 290 110 312 238 180 315 62 250 70 95Z"/></g><circle class="core-glow" cx="180" cy="180" r="58"/><circle class="core" cx="180" cy="180" r="55"/><text class="core-label" x="180" y="177" text-anchor="middle">SCIENCE</text><text class="core-label core-label-second" x="180" y="195" text-anchor="middle">DES DONNÉES</text><text class="node-label" x="180" y="25" text-anchor="middle">SOURCES</text><text class="node-label" x="330" y="109" text-anchor="middle">ANALYSE</text><text class="node-label" x="180" y="349" text-anchor="middle">MODÈLES</text><text class="node-label" x="330" y="258" text-anchor="middle">IA</text><text class="node-label" x="16" y="91" text-anchor="start">DÉCISION</text><text class="node-label" x="39" y="255" text-anchor="end">BI</text><g><circle class="node" cx="180" cy="48" r="7"/><circle class="node" cx="290" cy="110" r="7"/><circle class="node node-ai" cx="312" cy="238" r="5"/><circle class="node" cx="180" cy="315" r="7"/><circle class="node" cx="62" cy="250" r="7"/><circle class="node" cx="70" cy="95" r="7"/></g></svg></div>
-      <div class="hero-note"><b>Explorer</b> · comprendre · décider</div>
+      <div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 360 360" role="presentation"><circle class="orbit" cx="180" cy="180" r="133"/><circle class="orbit-alt" cx="180" cy="180" r="104"/><circle class="orbit" cx="180" cy="180" r="73"/><g class="link"><path d="M180 180 180 48M180 180 290 110M180 180 312 238M180 180 180 315M180 180 62 250M180 180 70 95"/><path d="M180 48 290 110 312 238 180 315 62 250 70 95Z"/></g><circle class="core-glow" cx="180" cy="180" r="58"/><circle class="core" cx="180" cy="180" r="55"/><text class="core-label core-label-data" x="180" y="180" dy=".35em" text-anchor="middle">DATA</text><text class="node-label" x="180" y="25" text-anchor="middle">SOURCES</text><text class="node-label" x="330" y="109" text-anchor="middle">ANALYSE</text><text class="node-label" x="180" y="349" text-anchor="middle">MODÈLES</text><text class="node-label" x="330" y="258" text-anchor="middle">IA</text><text class="node-label" x="16" y="91" text-anchor="start">DÉCISION</text><text class="node-label" x="39" y="255" text-anchor="end">BI</text><g><circle class="node" cx="180" cy="48" r="7"/><circle class="node" cx="290" cy="110" r="7"/><circle class="node node-ai" cx="312" cy="238" r="5"/><circle class="node" cx="180" cy="315" r="7"/><circle class="node" cx="62" cy="250" r="7"/><circle class="node" cx="70" cy="95" r="7"/></g></svg></div>
+      <div class="hero-note"><span class="hero-verb">Explorer</span><span class="hero-note-separator" aria-hidden="true">·</span><span class="hero-verb">Comprendre</span><span class="hero-note-separator" aria-hidden="true">·</span><span class="hero-verb">Décider</span></div>
     </section>
 
     <section class="wrap section" id="expertise" aria-labelledby="experience-title">
